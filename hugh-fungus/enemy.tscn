@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c8athvu031028" path="res://icon.svg" id="1_7k104"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
-radius = 19.0
+radius = 24.020824
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 65.03076
@@ -37,5 +37,15 @@ z_index = 2
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_4gyqm")
 
+[node name="rand_Move_Timer" type="Timer" parent="."]
+wait_time = 2.01
+one_shot = true
+
+[node name="idle_timer" type="Timer" parent="."]
+wait_time = 1.521
+one_shot = true
+
 [connection signal="body_entered" from="player_detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="player_detection" to="." method="_on_player_detection_body_exited"]
+[connection signal="timeout" from="rand_Move_Timer" to="." method="_on_rand_move_timer_timeout"]
+[connection signal="timeout" from="idle_timer" to="." method="_on_idle_timer_timeout"]
