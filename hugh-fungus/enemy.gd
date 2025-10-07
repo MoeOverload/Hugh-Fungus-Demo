@@ -60,8 +60,10 @@ func randomize_direction():
 
 
 func handle_attack(_delta):
+	
+	$enemy_hitbox.visible = true
 	velocity = Vector2.ZERO
-	#TODO
+	#add cooldown timer for attack 
 
 
 func _on_player_detection_body_entered(body: Node2D) -> void:

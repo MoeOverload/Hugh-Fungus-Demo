@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwgigt1y0jsyu"]
+[gd_scene load_steps=7 format=3 uid="uid://cwgigt1y0jsyu"]
 
 [ext_resource type="Script" uid="uid://cg414n3pl4orb" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://c8athvu031028" path="res://icon.svg" id="1_7k104"]
@@ -19,6 +19,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
+radius = 3.426819
+height = 19.55084
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
@@ -44,6 +48,14 @@ one_shot = true
 [node name="idle_timer" type="Timer" parent="."]
 wait_time = 1.521
 one_shot = true
+
+[node name="enemy_hitbox" type="Area2D" parent="." groups=["enemy_hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(1.0000076, 2.6193445e-09)
+rotation = -1.5714123
+scale = Vector2(-9.63046, 5.114994)
+shape = SubResource("CapsuleShape2D_4gyqm")
 
 [connection signal="body_entered" from="player_detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="player_detection" to="." method="_on_player_detection_body_exited"]
