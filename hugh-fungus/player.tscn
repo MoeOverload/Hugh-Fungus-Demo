@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp660ag48wxkg"]
+[gd_scene load_steps=6 format=3 uid="uid://dp660ag48wxkg"]
 
 [ext_resource type="Texture2D" uid="uid://c8athvu031028" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dcy5fup0eofgv" path="res://player.gd" id="1_onrkg"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
 radius = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 13.601471
+
 [node name="player" type="CharacterBody2D" groups=["Player"]]
 z_index = 2
 script = ExtResource("1_onrkg")
@@ -32,3 +35,11 @@ shape = SubResource("CircleShape2D_i3pqv")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="damage_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_area"]
+shape = SubResource("CircleShape2D_onrkg")
+
+[connection signal="area_entered" from="damage_area" to="." method="_on_damage_area_area_entered"]
+[connection signal="area_exited" from="damage_area" to="." method="_on_damage_area_area_exited"]

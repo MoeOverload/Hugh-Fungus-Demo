@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+#build a player state machine using enum
+
+
+var enemy
+var damaged = false
+var direction 
+@export var player_health = 200
 @export var speed = 250
 
 func get_input():
@@ -7,5 +14,32 @@ func get_input():
 	velocity = input_direction * speed
 
 func _physics_process(_delta):
-	get_input()
+	if damaged == true:
+		player_hit()
+
+	else:
+		get_input()
 	move_and_slide()
+
+
+func _on_damage_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group('enemy_hitbox'):
+		enemy = area
+		damaged = true
+		#current_state = State.damaged
+		
+
+func player_hit():
+	player_health = player_health - 20
+	enemy.get_vector()
+	direction = (enemy.global_position + self.global_position).normalized()
+	velocity = direction * (speed * 2)
+	print(player_health)
+	damaged = false 
+
+
+func _on_damage_area_area_exited(area: Area2D) -> void:
+	if area.is_in_group('enemy_hitbox'):
+		enemy = null
+	
+		
