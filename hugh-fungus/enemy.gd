@@ -40,6 +40,8 @@ func handle_chase(_delta):
 	if player_detected == true:
 		direction =  (player.global_position - self.global_position).normalized()
 		velocity = direction * SPEED
+		if player.global_position.distance_to(self.global_position) <= 20.00:
+			current_state = state.ATTACK
 	else:
 		velocity = Vector2.ZERO
 		current_state = state.IDLE
@@ -62,6 +64,7 @@ func randomize_direction():
 func handle_attack(_delta):
 	
 	$enemy_hitbox.visible = true
+	$attack_cooldow_timer.start()
 	velocity = Vector2.ZERO
 	#add cooldown timer for attack 
 
@@ -88,3 +91,8 @@ func _on_idle_timer_timeout() -> void:
 	current_state = state.WANDER
 	randomize_direction()
 	wander_timer.start()
+
+
+func _on_attack_cooldow_timer_timeout() -> void:
+	$enemy_hitbox.visible = false
+	current_state = state.IDLE
