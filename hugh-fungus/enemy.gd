@@ -63,8 +63,9 @@ func randomize_direction():
 
 func handle_attack(_delta):
 	
-	$enemy_hitbox.visible = true
+	$enemy_hitbox.visible = false
 	$attack_cooldow_timer.start()
+	$enemy_hitbox.visible = true
 	velocity = Vector2.ZERO
 	#add cooldown timer for attack 
 

@@ -22,7 +22,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
 radius = 3.426819
-height = 19.55084
+height = 16.373472
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
@@ -51,9 +51,10 @@ one_shot = true
 
 [node name="enemy_hitbox" type="Area2D" parent="." groups=["enemy_hitbox"]]
 visible = false
+scale = Vector2(0.74636674, 0.8076988)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(1.0000076, 2.6193445e-09)
+position = Vector2(1.1920929e-07, -2.4966695e-11)
 rotation = -1.5714123
 scale = Vector2(-9.63046, 5.114994)
 shape = SubResource("CapsuleShape2D_4gyqm")

@@ -31,7 +31,7 @@ func _on_damage_area_area_entered(area: Area2D) -> void:
 
 func player_hit():
 	player_health -= 20
-	direction = (enemy.global_position - self.global_position).normalized()
+	direction = (enemy.global_position + self.global_position).normalized()
 	velocity = (direction * speed )* 2
 	print(player_health)
 	damaged = false 
