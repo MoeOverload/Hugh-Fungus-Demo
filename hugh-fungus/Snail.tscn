@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlkqli26yx0tq"]
+
+[ext_resource type="PackedScene" uid="uid://cwgigt1y0jsyu" path="res://enemy.tscn" id="1_3miyd"]
+[ext_resource type="Texture2D" uid="uid://djswxtdralcn3" path="res://Art/Enemies/Snail_sprite.png" id="2_i6obs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s4s51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i6obs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="enemy" instance=ExtResource("1_3miyd")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_s4s51")

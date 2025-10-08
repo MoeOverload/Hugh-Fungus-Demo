@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://g4rsim3n4vbm"]
+
+[ext_resource type="PackedScene" uid="uid://cwgigt1y0jsyu" path="res://enemy.tscn" id="1_6d58j"]
+[ext_resource type="Texture2D" uid="uid://cqs4xbfrev0i0" path="res://Art/Enemies/Ant_sprite.png" id="2_yahas"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1ll1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yahas")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="enemy" instance=ExtResource("1_6d58j")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_y1ll1")

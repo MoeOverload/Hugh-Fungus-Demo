@@ -16,7 +16,7 @@ animations = [{
 "texture": ExtResource("1_7k104")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -35,10 +35,11 @@ shape = SubResource("CircleShape2D_qi2p4")
 shape = SubResource("CircleShape2D_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.91674685, 0, 0.12259779, 1)
+modulate = Color(0.95888215, 0, 0.13008961, 1)
 z_index = 2
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_4gyqm")
+animation = &"idle"
 
 [node name="rand_Move_Timer" type="Timer" parent="."]
 wait_time = 2.01
