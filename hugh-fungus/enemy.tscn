@@ -50,6 +50,7 @@ wait_time = 1.521
 one_shot = true
 
 [node name="enemy_hitbox" type="Area2D" parent="." groups=["enemy_hitbox"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(1.0000076, 2.6193445e-09)
@@ -57,7 +58,12 @@ rotation = -1.5714123
 scale = Vector2(-9.63046, 5.114994)
 shape = SubResource("CapsuleShape2D_4gyqm")
 
+[node name="attack_cooldow_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="player_detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="player_detection" to="." method="_on_player_detection_body_exited"]
 [connection signal="timeout" from="rand_Move_Timer" to="." method="_on_rand_move_timer_timeout"]
 [connection signal="timeout" from="idle_timer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="attack_cooldow_timer" to="." method="_on_attack_cooldow_timer_timeout"]
