@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bg4466vj7afwj" path="res://ground-layers(32x32).png" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dp660ag48wxkg" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cwgigt1y0jsyu" path="res://enemy.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://g4rsim3n4vbm" path="res://Ant.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dlkqli26yx0tq" path="res://Snail.tscn" id="5_5vw27"]
-[ext_resource type="PackedScene" uid="uid://cxsthtnwuqx8" path="res://Rat.tscn" id="6_kek77"]
-[ext_resource type="PackedScene" uid="uid://b5nji5plcet7e" path="res://Bunny.tscn" id="7_4c57u"]
-[ext_resource type="PackedScene" uid="uid://cy371jifyb6lr" path="res://Deer.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" path="res://Ant.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" path="res://Snail.tscn" id="5_5vw27"]
+[ext_resource type="PackedScene" path="res://Rat.tscn" id="6_kek77"]
+[ext_resource type="PackedScene" path="res://Bunny.tscn" id="7_4c57u"]
+[ext_resource type="PackedScene" path="res://Deer.tscn" id="8_efxa6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
