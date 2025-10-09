@@ -776,6 +776,7 @@ tile_set = SubResource("TileSet_1bvp3")
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(143, 122)
+scale = Vector2(0.3, 0.3)
 
 [node name="enemy" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(588, 347)
@@ -785,15 +786,19 @@ position = Vector2(817, 530)
 
 [node name="Ant (tscn)" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(1237, 363)
+scale = Vector2(0.3, 0.3)
 
 [node name="Snail(tscn)" parent="." instance=ExtResource("5_5vw27")]
 position = Vector2(1037, 503)
+scale = Vector2(0.3, 0.3)
 
 [node name="Rat (tscn)" parent="." instance=ExtResource("6_kek77")]
 position = Vector2(2352, 259)
 
 [node name="Bunny (tscn)" parent="." instance=ExtResource("7_4c57u")]
 position = Vector2(589, 439)
+scale = Vector2(0.3, 0.3)
 
 [node name="Deer (tscn)" parent="." instance=ExtResource("8_efxa6")]
 position = Vector2(776, 394)
+scale = Vector2(0.3, 0.3)
